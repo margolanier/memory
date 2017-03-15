@@ -1,0 +1,11 @@
+#cards {
+	@include grid-row();
+	card {
+		@include grid-column(4);
+		background-color: pink;
+		
+		&.flipped {
+			background-color: yellow;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <title>Memory Game</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="MemoryGame">
+	<header>
+		<h1>Memory</h1>
+	</header>
+	
+	<main>
+		<section ng-controller="PlayGame">
+			<div id="stats">Stats here</div>
+			<div id="cards"></div>
+		</section>
+	</main>
+</body>
+
+</html>

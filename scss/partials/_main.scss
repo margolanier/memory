@@ -1,0 +1,52 @@
+html, body {
+    height: 100%;
+    background: $bg-color;
+	color: $font-color;
+	font-family: $body-font;
+}
+
+/*h1, h2, h3 {
+	@include header-font;
+}*/
+
+p {
+	font-family: $body-font;
+}
+
+/*#header {
+	padding: 1em;
+	
+	@include breakpoint($medium) {
+		display: flex;
+		
+		nav {
+			margin-left: auto;
+			margin-top: 4.5em;
+		}
+	}
+	
+	h1 {
+		margin-bottom: 0;
+		border-bottom: 2px solid $primary-color;
+	}
+	
+	p {
+		margin-top: 5px;
+		font-weight: bold;
+		text-transform: lowercase;
+		letter-spacing: 1px;
+	}
+}*/
+
+/*button {
+	color: $primary-color;
+	font-family: $body-font;
+    font-weight: bold;
+	border-bottom: 3px solid transparent;
+	padding: 0.5em;
+	
+	&:hover, &:focus {
+        opacity: 0.8;
+		outline: none;
+    }
+}*/
