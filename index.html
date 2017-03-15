@@ -19,7 +19,13 @@
 	<main>
 		<section ng-controller="PlayGame">
 			<div id="stats">Stats here</div>
-			<div id="cards"></div>
+			<div id="cards">
+			<div class="card-box" ng-repeat="card in cards">
+				<div class="card">
+					{{ card.name }}
+				</div>
+			</div>
+			</div>
 		</section>
 	</main>
 </body>

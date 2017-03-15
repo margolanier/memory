@@ -9,7 +9,7 @@ for(let i=0; i<controllers.length; i++) {
 }
 
 const services = [
-	require ('./services/card-themes'),
+	require ('./services/card-deck'),
 	require ('./services/game-stats'),
 ];
 

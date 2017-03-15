@@ -8,9 +8,6 @@ const strip = require('gulp-strip-comments');
 gulp.task('default', ['html', 'css', 'js']);
 
 gulp.task('html', () => {
-    gulp.src('templates/*.html')
-        .pipe(gulp.dest(`public/templates`));
-
     gulp.src('assets/*')
         .pipe(gulp.dest(`public/assets`));
 
@@ -42,6 +39,5 @@ gulp.task('watch', ['default'], () => {
     gulp.watch('scss/*.scss', ['css']);
 	gulp.watch('scss/partials/*.scss', ['css']);
     gulp.watch('*.html', ['html']);
-    gulp.watch('templates/*.html', ['html']);
     gulp.watch('assets/*', ['html']);
 });

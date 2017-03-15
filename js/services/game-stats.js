@@ -3,18 +3,19 @@ module.exports = {
 	func($http) {
 		let stats = {
 			playerOne: {
-				matches: 0;
+				matches: 0,
 			},
 			playerTwo: {
-				matches: 0;
+				matches: 0,
 			},
-			round: 0;
-			activeCards: 12;
+			round: 0,
+			activeCards: 12,
 		};
 		
 		return {
 			getStats() {
-				return stats;
+				//return stats;
+				return 'stats';
 			},
 			
 			addMatch(player) {

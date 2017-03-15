@@ -1,10 +1,8 @@
 module.exports = {
 	name: 'PlayGame',
-	func($scope, CardThemes, GameStats) {
+	func($scope, CardDeck, GameStats) {
 		
-		$scope.cardsArray = CardThemes.getCards();
-		$scope.gameStats = GameStats.getStats();
-		
-		console.log(`we're in!`);
+		$scope.cards = CardDeck.getCards();
+		$scope.stats = GameStats.getStats();
 	}
 };

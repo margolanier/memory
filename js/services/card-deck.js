@@ -36,11 +36,13 @@ module.exports = {
 		
 		return {
 			setTheme(theme) {
-				
+				// cardDeck = theme;
 				return cardDeck;
 			},
 			
 			getCards() {
+				// hardcoded for now
+				cardDeck = GoT; // remove later
 				return cardDeck;
 			},
 			
