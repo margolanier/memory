@@ -2,13 +2,15 @@ module.exports = {
 	name: 'CardDeck',
 	func($http) {
 		
-		// import custom themes
-		const GoT = require ('./GoT-theme');
-		
-		// current playing cards
+		// define current deck of cards
 		let cardDeck = [];
 		
-		let shuffleDeck = (array) => {
+		// import custom themes
+		const themes = {
+			GoT: require ('./GoT-theme'),
+		};
+		
+		let shuffle = (array) => {
 			let currentIndex = array.length, temporaryValue, randomIndex;
 			
 			// while there remain elements to shuffle...
@@ -17,12 +19,11 @@ module.exports = {
 				randomIndex = Math.floor(Math.random() * currentIndex);
 				currentIndex -= 1;
 				
-				// swap it with the current element.
+				// swap it with the current element
 				temporaryValue = array[currentIndex];
 				array[currentIndex] = array[randomIndex];
 				array[randomIndex] = temporaryValue;
 			}
-			
 			return array;
 		}
 		
@@ -38,31 +39,35 @@ module.exports = {
 		
 		return {
 			setTheme(theme) {
-				let cards = GoT; // hardcoded for now
-				// let cards = theme;
-				let count = 0;
+				let cards = [];
 				
-				let addCardsToDeck = () => {
-					cards.forEach(function(card) {
-						let newCard = new Card(count, card.name, card.image);
-						cardDeck.push(newCard);
-						count++;
+				// get theme and corresponding card list
+				let unshuffled = themes[theme];
+				
+				// duplicate cards list, so each card has a match
+				for (let i=0; i<2; i++) {
+					unshuffled.forEach(function(card) {
+						cards.push(card);
 					});
 				};
 				
-				// loop through cards twice when adding to deck, so each has a match
-				for (let i=0; i<2; i++) {
-					addCardsToDeck();
-				}
+				// shuffle list before adding new cards to deck
+				cards = shuffle(cards);
+				
+				// loop through shuffled array and create new cards from Card constructor
+				// count/id === array index
+				let count = 0;
+				cards.forEach(function(card) {
+					let newCard = new Card(count, card.name, card.image);
+					cardDeck.push(newCard);
+					count++;
+				});
+				
 				return cardDeck;
 			},
 			
 			getCards() {
 				return cardDeck;
-			},
-			
-			shuffle() {
-				return shuffle(cardDeck);
 			},
 			
 			flipCard(id, side) {

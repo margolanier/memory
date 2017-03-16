@@ -21,8 +21,9 @@
 			<div id="stats">Stats here</div>
 			<div id="cards">
 			<div class="card-box" ng-repeat="card in cards" ng-click="selectCard(card)">
-				<div class="card" ng-class="{'flipped': card.flipped}">
-					{{ card.name }}
+				<div class="card" ng-class="{flipped: card.flipped}">
+					<div class="front">{{ card.name }}</div>
+					<div class="back"><img src="{{ card.image }}"></div>
 				</div>
 			</div>
 			</div>

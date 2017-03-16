@@ -1,33 +1,33 @@
 module.exports = [
 	{
 		name: 'Tyrion Lannister',
-		image: '',
+		image: 'assets/tyrion.jpg',
 	},
 	{
 		name: 'Cersei Lannister',
-		image: '',
+		image: 'assets/cersei.jpg',
 	},
 	{
 		name: 'Daenerys Targaryen',
-		image: '',
+		image: 'assets/daenerys.jpg',
 	},
 	{
 		name: 'Jon Snow',
-		image: '',
+		image: 'assets/jon.jpg',
 	},
 	{
 		name: 'Sansa Stark',
-		image: '',
+		image: 'assets/sansa.jpg',
 	},
 	{
 		name: 'Joffrey Baratheon',
-		image: '',
+		image: 'assets/joffrey.jpg',
 	},{
 		name: 'Arya Stark',
-		image: '',
+		image: 'assets/arya.jpg',
 	},
 	{
-		name: 'Brienne of Tarth',
-		image: '',
+		name: 'Bran Stark',
+		image: 'assets/bran.jpg',
 	},
 ];

@@ -12,6 +12,12 @@ module.exports = {
 		let firstGuess = null;
 		let secondGuess = null;
 		
+		const resetGuesses = () => {
+			guesses = 0;
+			firstGuess = null;
+			secondGuess = null;
+		};
+		
 		$scope.selectCard = (card) => {
 			
 			// for each guess, flip card over
@@ -22,43 +28,43 @@ module.exports = {
 				if (first.name === second.name) {
 					console.log(`it's a match!`);
 					// disable cards
-					setTimeout(function() {
-						CardDeck.disableCard(first.id);
-						CardDeck.disableCard(second.id);
-					}, 2000);
+					CardDeck.disableCard(first.id);
+					CardDeck.disableCard(second.id);
 					
 					// update user score
 					
 				} else {
+					console.log('no match');
 					// flip cards back over
-					setTimeout(function() {
-						CardDeck.flipCard(first.id, false);
-						CardDeck.flipCard(second.id, false);
-					}, 2000);
+					CardDeck.flipCard(first.id, false);
+					CardDeck.flipCard(second.id, false);
 				}
 				
 				// update round
 				
-				// set guesses back to 0 for next turn
-				guesses = 0;
+				console.log(firstGuess);
+				console.log(secondGuess);
+				
+				// reset for next turn
+				resetGuesses();
 			};
 			
 			// next action is determined by how many cards the user has already selected
 			switch (guesses) {
 				case 0: // first guess
 					guesses++;
-					console.log(guesses);
 					firstGuess = card;
 					break;
 				case 1: // second guess
 					// prevent double-clicking on same card
 					if (card.id !== firstGuess.id) {
 						guesses++;
-						console.log(guesses);
 						secondGuess = card;
 						
 						// check cards for a match
-						isMatch(firstGuess, secondGuess);
+						setTimeout(function() {
+							isMatch(firstGuess, secondGuess);
+						}, 800);
 					}
 					break;
 				default:
