@@ -4,10 +4,6 @@ module.exports = [
 		image: '',
 	},
 	{
-		name: 'Jaime Lannister',
-		image: '',
-	},
-	{
 		name: 'Cersei Lannister',
 		image: '',
 	},
@@ -20,47 +16,18 @@ module.exports = [
 		image: '',
 	},
 	{
-		name: 'Petyr Baelish',
-		image: '',
-	},
-	{
-		name: 'Bran Stark',
+		name: 'Sansa Stark',
 		image: '',
 	},
 	{
 		name: 'Joffrey Baratheon',
 		image: '',
-	},
-	{
-		name: 'Sansa Stark',
-		image: '',
-	},
-	{
+	},{
 		name: 'Arya Stark',
 		image: '',
 	},
 	{
-		name: 'Samwell Tarly',
-		image: '',
-	},
-	{
-		name: 'Theon Greyjoy',
-		image: '',
-	},
-	{
-		name: 'Ygritte',
-		image: '',
-	},
-	{
 		name: 'Brienne of Tarth',
-		image: '',
-	},
-	{
-		name: 'Ramsay Bolton',
-		image: '',
-	},
-	{
-		name: 'The High Sparrow',
 		image: '',
 	},
 ];

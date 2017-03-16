@@ -27,6 +27,8 @@ module.exports = {
 			updateRound() {
 				stats.round += 1;
 				return stats;
+				
+				// check for number of active cards
 			},
 		};
 	},
