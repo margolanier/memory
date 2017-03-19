@@ -3,7 +3,7 @@ module.exports = {
 	func($http) {
 		
 		// define current deck of cards
-		let cardDeck;
+		let cardDeck = [];
 		
 		// import custom themes
 		const themes = {
@@ -47,8 +47,10 @@ module.exports = {
 			},
 			
 			newGame() {
-				cardDeck = [];
-				let cards = [];
+				cardDeck = []; // reset deck
+				
+				// hold cards in temporary array while duplicating and shuffling
+				let cards = []; 
 				
 				// get theme and corresponding card list
 				let unshuffled = theme;

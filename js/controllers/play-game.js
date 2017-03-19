@@ -2,15 +2,10 @@ module.exports = {
 	name: 'PlayGame',
 	func($scope, CardDeck, GameStats) {
 		
-		$scope.cards = CardDeck.newGame();
-		$scope.game = GameStats.newStats($scope.cards);
-		
 		// start new game on load
 		$scope.newGame = () => {
-			console.log('new game');
-			CardDeck.newGame();
-			GameStats.newStats($scope.cards);
-			console.log($scope.game);
+			$scope.cards = CardDeck.newGame();
+			$scope.game = GameStats.newStats($scope.cards);
 		};
 		$scope.newGame();
 		
