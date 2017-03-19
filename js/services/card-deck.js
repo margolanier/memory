@@ -3,12 +3,15 @@ module.exports = {
 	func($http) {
 		
 		// define current deck of cards
-		let cardDeck = [];
+		let cardDeck;
 		
 		// import custom themes
 		const themes = {
 			GoT: require ('./GoT-theme'),
 		};
+		
+		// set default theme
+		let theme = themes['GoT'];
 		
 		let shuffle = (array) => {
 			let currentIndex = array.length, temporaryValue, randomIndex;
@@ -38,11 +41,17 @@ module.exports = {
 		}
 		
 		return {
-			setTheme(theme) {
+			setTheme(newTheme) {
+				theme = themes[newTheme];
+				return theme;
+			},
+			
+			newGame() {
+				cardDeck = [];
 				let cards = [];
 				
 				// get theme and corresponding card list
-				let unshuffled = themes[theme];
+				let unshuffled = theme;
 				
 				// duplicate cards list, so each card has a match
 				for (let i=0; i<2; i++) {
@@ -63,10 +72,6 @@ module.exports = {
 					count++;
 				});
 				
-				return cardDeck;
-			},
-			
-			getCards() {
 				return cardDeck;
 			},
 			

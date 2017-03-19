@@ -13,17 +13,22 @@
 
 <body ng-app="MemoryGame">
 	<header>
-		<h1>Memory</h1>
+		<h1>Game of Memory</h1>
 	</header>
 	
 	<main>
 		<section ng-controller="PlayGame">
-			<div id="stats">Stats here</div>
+			<div id="stats">
+				<button id="new-game" ng-click="newGame()">New Game</button>
+				<p>Round: {{ game.round }}</p>
+			</div>
 			<div id="cards">
 			<div class="card-box" ng-repeat="card in cards" ng-click="selectCard(card)">
 				<div class="card" ng-class="{flipped: card.flipped}">
 					<div class="front">{{ card.name }}</div>
-					<div class="back"><img src="{{ card.image }}"></div>
+					<div class="back">
+						<div class="overlay"><img ng-src="{{ card.image }}"></div>
+					</div>
 				</div>
 			</div>
 			</div>

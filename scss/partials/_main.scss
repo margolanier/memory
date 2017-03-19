@@ -5,12 +5,29 @@ html, body {
 	font-family: $body-font;
 }
 
-/*h1, h2, h3 {
+h1, h2, h3 {
 	@include header-font;
-}*/
+}
 
 p {
 	font-family: $body-font;
+}
+
+header {
+	@include grid-row();
+	
+	h1 {
+		@include grid-column(12);
+		text-align: center;
+	}
+}
+
+#stats {
+	@include grid-row();
+	
+	p {
+		@include grid-column(12);
+	}
 }
 
 /*#header {

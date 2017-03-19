@@ -30,4 +30,8 @@ module.exports = [
 		name: 'Bran Stark',
 		image: 'assets/bran.jpg',
 	},
+	{
+		name: 'Jaime Lannister',
+		image: 'assets/jaime.jpg',
+	},
 ];

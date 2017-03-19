@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'GameStats',
 	func($http) {
-		let stats = {
+		let game = {
 			playerOne: {
 				matches: 0,
 			},
@@ -13,20 +13,28 @@ module.exports = {
 		};
 		
 		return {
+			newStats(cards) {
+				game.playerOne.matches = 0;
+				game.playerTwo.matches = 0;
+				game.round = 0;
+				game.activeCards = cards.length;
+				
+				return game;
+			},
+			
 			getStats() {
-				//return stats;
-				return 'stats';
+				return game;
 			},
 			
 			addMatch(player) {
-				stats[player].matches += 1;
-				stats.activeCards -= 2; // card pairs are disabled after a match
-				return stats;
+				game[player].matches += 1;
+				game.activeCards -= 2; // card pairs are disabled after a match
+				return game;
 			},
 			
 			updateRound() {
-				stats.round += 1;
-				return stats;
+				game.round += 1;
+				return game;
 				
 				// check for number of active cards
 			},
