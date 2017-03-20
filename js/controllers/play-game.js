@@ -34,7 +34,7 @@ module.exports = {
 			CardDeck.flipCard(card.id, true); // flip card over when selected
 			
 			/*
-			 * If 2 cards have been flipped, is it a match?
+			 * If 2 cards have been flipped: check if it's a match
 			 *
 			 * 1. Compare cards
 			 * 2. Update game stats
@@ -49,11 +49,20 @@ module.exports = {
 					
 					// update user score
 					
+					
+					if($scope.cards.active === 0) {
+						console.log('win');
+					}
+					
 				} else {
-					console.log('no match');
 					// flip cards back over
-					CardDeck.flipCard(first.id, false);
-					CardDeck.flipCard(second.id, false);
+					const noMatch = () => {
+						CardDeck.flipCard(first.id, false);
+						CardDeck.flipCard(second.id, false);
+					};
+					setTimeout(function() {
+						noMatch();
+					}, 500);
 				}
 				
 				// reset round for next turn
@@ -67,6 +76,7 @@ module.exports = {
 				
 				// on first guess, leave card flipped
 				case 0:
+					console.log(card.name);
 					guesses++;
 					firstGuess = card;
 					break;
@@ -74,6 +84,7 @@ module.exports = {
 				// on second guess, check cards for a match
 				case 1:
 					// prevent double-clicking on same card
+					console.log(card.name);
 					if (card.id !== firstGuess.id) {
 						guesses++;
 						secondGuess = card;

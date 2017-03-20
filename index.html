@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Memory Game</title>
+    <title>Memory</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 	<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Raleway" rel="stylesheet">
@@ -23,14 +23,14 @@
 				<p>Round: {{ game.round }}</p>
 			</div>
 			<div id="cards">
-			<div class="card-box" ng-repeat="card in cards" ng-click="selectCard(card)">
-				<div class="card" ng-class="{flipped: card.flipped}">
-					<div class="front">{{ card.name }}</div>
-					<div class="back">
-						<div class="overlay"><img ng-src="{{ card.image }}"></div>
+				<div class="card-box" ng-repeat="card in cards" ng-click="selectCard(card)">
+					<div class="card" ng-class="{flipped: card.flipped, match: !card.active}">
+						<div class="front">{{ card.name }}</div>
+						<div class="back">
+							<div class="overlay"><img ng-src="{{ card.image }}"></div>
+						</div>
 					</div>
 				</div>
-			</div>
 			</div>
 		</section>
 	</main>
